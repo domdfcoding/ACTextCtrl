@@ -249,6 +249,16 @@ class ACTextControl(wx.TextCtrl):
 		Useful if choices have been added by the user"""
 		return self.all_candidates
 
+	def Append(self, entry):
+		"""Append to all_candidates"""
+		if type(entry) == list:
+			self.all_candidates += entry
+		else:
+			self.all_candidates.append(entry)
+	
+	def Clear_candidates(self):
+		"""Clears entries from all_candidates"""
+		self.all_candidates = []
 
 class ACPopup(wx.PopupWindow):
 	"""
